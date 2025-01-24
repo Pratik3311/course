@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Course Layout</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <h1>MyLogo</h1>
+    </div>
+    <div class="nav-buttons">
+      <button class="enroll-btn">Enroll Now</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Video List Section -->
+    <aside class="course-content">
+      
+      <div class="video-list-wrapper">
+        
+          <ul class="video-list">
+            <h2>Course Content</h2>
+          </ul>
+      </div>
+  </aside>
+
+    <!-- YouTube Player and Course Overview Section -->
+    <main class="player-overview">
+        <!-- YouTube Player Section -->
+        <div id="player-container" style="width: 73%; height: 500px; transition: width 0.5s;">
+            <iframe
+              id="player"
+              src="https://www.youtube.com/embed/XTp5jaRU3Ws"
+              width="100%" 
+              height="100%"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+            <div id="video-summary">
+              <h2 id="current-title"></h2>
+              <p id="current-duration"></p>
+              <p id="video-summary"></p>
+            </div>
+
+            <button>Notes</button>
+            <button>Questions</button>
+            <button>Job Tips</button>
+        </div>
+
+        <!-- Course Overview Section -->
+        <div class="course-container">
+            <div class="course-overview">
+              <h2 class="overview-title">Course Overview</h2>
+              <div class="overview-content">
+                  <!-- Title -->
+                  <div class="overview-item">
+                      <img src="https://img.icons8.com/ios/50/000000/book.png" alt="Title Icon" class="icon">
+                      <p class="item-text">Modern Web Development</p>
+                  </div>
+                  <!-- Number of Lectures -->
+                  <div class="overview-item">
+                      <img src="https://img.icons8.com/ios/50/000000/video.png" alt="Lectures Icon" class="icon">
+                      <p class="item-text">40 Lectures</p>
+                  </div>
+                  <!-- Ratings -->
+                  <div class="overview-item">
+                      <img src="https://img.icons8.com/ios/50/000000/star.png" alt="Ratings Icon" class="icon">
+                      <p class="item-text">4.8/5 (1200 Ratings)</p>
+                  </div>
+                  <!-- Skill Level -->
+                  <div class="overview-item">
+                      <img src="https://img.icons8.com/ios/50/000000/bar-chart.png" alt="Skill Level Icon" class="icon">
+                      <p class="item-text">Advanced</p>
+                  </div>
+                  <!-- Estimated Duration -->
+                  <div class="overview-item">
+                      <img src="https://img.icons8.com/ios/50/000000/clock.png" alt="Duration Icon" class="icon">
+                      <p class="item-text">10 Weeks</p>
+                  </div>
+              </div>
+          </div>
+          <div class="ratings-container">
+            <h3 class="ratings-title">Rate this Course</h3>
+            <div class="ratings-icons">
+              <span class="rating-icon" data-value="1">⭐</span>
+              <span class="rating-icon" data-value="2">⭐</span>
+              <span class="rating-icon" data-value="3">⭐</span>
+              <span class="rating-icon" data-value="4">⭐</span>
+              <span class="rating-icon" data-value="5">⭐</span>
+            </div>
+          </div>      
+        </div>
+    </main>
+  </div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="script.js"></script>
+</body>
+</html>
