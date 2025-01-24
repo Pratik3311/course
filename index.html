@@ -53,9 +53,16 @@
               <p id="video-summary"></p>
             </div>
 
-            <button>Notes</button>
-            <button>Questions</button>
-            <button>Job Tips</button>
+            <div class="video-controls">
+              <button id="notes-button">Notes</button>
+              <button>Questions</button>
+              <button>Job Tips</button>
+            </div>
+            <div id="notes-section" style="display: none;">
+              <h3>Notes</h3>
+              <textarea id="video-notes" rows="5" placeholder="Enter your notes here..."></textarea>
+              <button id="save-notes">Save Notes</button>
+            </div>
         </div>
 
         <!-- Course Overview Section -->
