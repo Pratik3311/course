@@ -16,6 +16,12 @@
       <h1>MyLogo</h1>
     </div>
     <div class="nav-buttons">
+      <div class="progress-container">
+        <svg class="progress-ring" width="40" height="40">
+          <circle class="progress-ring__circle" stroke="green" stroke-width="4" fill="transparent" r="18" cx="20" cy="20"/>
+        </svg>
+        <span class="progress-text">0%</span>
+      </div>
       <button class="enroll-btn">Enroll Now</button>
     </div>
   </nav>
@@ -24,90 +30,128 @@
   <div class="container">
     <!-- Video List Section -->
     <aside class="course-content">
-      
       <div class="video-list-wrapper">
-        
-          <ul class="video-list">
+        <ul class="video-list">
+          <div class="content-header">
             <h2>Course Content</h2>
-          </ul>
+            <button class="download-certificate-btn">Download Certificate</button>
+          </div>
+        </ul>
       </div>
-  </aside>
+      <div class="comment-section">
+        <h3>Comments</h3>
+        <form id="comment-form">
+          <textarea id="comment-input" placeholder="Add a comment..." required></textarea>
+          <button type="submit">Post Comment</button>
+        </form>
+        <div id="comments-list">
+          <!-- Comments will be added dynamically -->
+        </div>
+      </div>
+    </aside>
 
     <!-- YouTube Player and Course Overview Section -->
     <main class="player-overview">
-        <!-- YouTube Player Section -->
-        <div id="player-container" style="width: 73%; height: 500px; transition: width 0.5s;">
-            <iframe
-              id="player"
-              src="https://www.youtube.com/embed/XTp5jaRU3Ws"
-              width="100%" 
-              height="100%"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-            <div id="video-summary">
-              <h2 id="current-title"></h2>
-              <p id="current-duration"></p>
-              <p id="video-summary"></p>
-            </div>
-
-            <div class="video-controls">
-              <button id="notes-button">Notes</button>
-              <button>Questions</button>
-              <button>Job Tips</button>
-            </div>
-            <div id="notes-section" style="display: none;">
-              <h3>Notes</h3>
-              <textarea id="video-notes" rows="5" placeholder="Enter your notes here..."></textarea>
-              <button id="save-notes">Save Notes</button>
-            </div>
+      <!-- YouTube Player Section -->
+      <div id="player-container" style="width: 73%; height: 500px; transition: width 0.5s;">
+        <iframe
+          id="player"
+          src="https://www.youtube.com/embed/XTp5jaRU3Ws"
+          width="100%" 
+          height="100%"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+        <div id="video-summary">
+          <h2 id="current-title"></h2>
+          <p id="current-duration"></p>
+          <p id="current-summary"></p>
         </div>
 
-        <!-- Course Overview Section -->
-        <div class="course-container">
-            <div class="course-overview">
-              <h2 class="overview-title">Course Overview</h2>
-              <div class="overview-content">
-                  <!-- Title -->
-                  <div class="overview-item">
-                      <img src="https://img.icons8.com/ios/50/000000/book.png" alt="Title Icon" class="icon">
-                      <p class="item-text">Modern Web Development</p>
-                  </div>
-                  <!-- Number of Lectures -->
-                  <div class="overview-item">
-                      <img src="https://img.icons8.com/ios/50/000000/video.png" alt="Lectures Icon" class="icon">
-                      <p class="item-text">40 Lectures</p>
-                  </div>
-                  <!-- Ratings -->
-                  <div class="overview-item">
-                      <img src="https://img.icons8.com/ios/50/000000/star.png" alt="Ratings Icon" class="icon">
-                      <p class="item-text">4.8/5 (1200 Ratings)</p>
-                  </div>
-                  <!-- Skill Level -->
-                  <div class="overview-item">
-                      <img src="https://img.icons8.com/ios/50/000000/bar-chart.png" alt="Skill Level Icon" class="icon">
-                      <p class="item-text">Advanced</p>
-                  </div>
-                  <!-- Estimated Duration -->
-                  <div class="overview-item">
-                      <img src="https://img.icons8.com/ios/50/000000/clock.png" alt="Duration Icon" class="icon">
-                      <p class="item-text">10 Weeks</p>
-                  </div>
-              </div>
+        <div class="video-controls">
+          <button id="notes-button">Notes</button>
+          <button id="questions-button">Questions</button>
+          <button id="job-tips-button">Job Tips</button>
+        </div>
+        
+        <div id="additional-content">
+          <div id="notes-section" style="display: none;">
+            <h3>Notes</h3>
+            <textarea id="video-notes" rows="5" placeholder="Enter your notes here..."></textarea>
+            <button id="save-notes">Save Notes</button>
           </div>
-          <div class="ratings-container">
-            <h3 class="ratings-title">Rate this Course</h3>
-            <div class="ratings-icons">
-              <span class="rating-icon" data-value="1">⭐</span>
-              <span class="rating-icon" data-value="2">⭐</span>
-              <span class="rating-icon" data-value="3">⭐</span>
-              <span class="rating-icon" data-value="4">⭐</span>
-              <span class="rating-icon" data-value="5">⭐</span>
-            </div>
-          </div>      
+          <div id="questions-section" style="display: none;">
+            <h3>Questions</h3>
+            <ul id="questions-list"></ul>
+          </div>
+          <div id="job-tips-section" style="display: none;">
+            <h3>Job Tips</h3>
+            <div id="job-descriptions"></div>
+            <div id="career-advice"></div>
+          </div>
         </div>
+      </div>
+
+      <!-- Course Overview Section -->
+      <div class="course-container">
+        <div class="course-overview">
+          <h2 class="overview-title">Course Overview</h2>
+          <div class="overview-content">
+            <!-- Title -->
+            <div class="overview-item">
+              <img src="https://img.icons8.com/ios/50/000000/book.png" alt="Title Icon" class="icon">
+              <p class="item-text">Modern Web Development</p>
+            </div>
+            <!-- Number of Lectures -->
+            <div class="overview-item">
+              <img src="https://img.icons8.com/ios/50/000000/video.png" alt="Lectures Icon" class="icon">
+              <p class="item-text">5 Lectures</p>
+            </div>
+            <!-- Ratings -->
+            <div class="overview-item">
+              <img src="https://img.icons8.com/ios/50/000000/star.png" alt="Ratings Icon" class="icon">
+              <p class="item-text">4.8/5 (1200 Ratings)</p>
+            </div>
+            <!-- Skill Level -->
+            <div class="overview-item">
+              <img src="https://img.icons8.com/ios/50/000000/bar-chart.png" alt="Skill Level Icon" class="icon">
+              <p class="item-text">Advanced</p>
+            </div>
+            <!-- Estimated Duration -->
+            <div class="overview-item">
+              <img src="https://img.icons8.com/ios/50/000000/clock.png" alt="Duration Icon" class="icon">
+              <p class="item-text">1 Weeks</p>
+            </div>
+          </div>
+        </div>
+        <div class="gamification">
+          <h3>Your Progress</h3>
+          <div class="badges">
+            <span class="badge" title="Beginner">🥉</span>
+            <span class="badge" title="Intermediate">🥈</span>
+            <span class="badge" title="Advanced">🥇</span>
+          </div>
+          <p>Points: <span id="user-points">0</span></p>
+          <div class="leaderboard">
+            <h4>Leaderboard</h4>
+            <ol id="leaderboard-list">
+              <!-- Leaderboard items will be added dynamically -->
+            </ol>
+          </div>
+        </div>
+        <div class="ratings-container">
+          <h3 class="ratings-title">Rate this Course</h3>
+          <div class="ratings-icons">
+            <span class="rating-icon" data-value="1">⭐</span>
+            <span class="rating-icon" data-value="2">⭐</span>
+            <span class="rating-icon" data-value="3">⭐</span>
+            <span class="rating-icon" data-value="4">⭐</span>
+            <span class="rating-icon" data-value="5">⭐</span>
+          </div>
+        </div>  
+      </div>
     </main>
   </div>
   <script src="https://www.youtube.com/iframe_api"></script>
