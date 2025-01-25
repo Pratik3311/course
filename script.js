@@ -1,11 +1,8 @@
-
-
-
 const videos = [
   {
-    id: "XTp5jaRU3Ws",
+    id: "erEgovG9WBs",
     title: "1. Introduction to Modern Web Development",
-    duration: "10:30",
+    duration: "13:17",
     views: "12k",
     summary: "An overview of modern web development practices and technologies.",
     completed: false,
@@ -24,9 +21,9 @@ const videos = [
     },
   },
   {
-    id: "g3r0IK73auk",
+    id: "b0IZo2Aho9Y",
     title: "2. Advanced React Techniques",
-    duration: "15:45",
+    duration: "8:54",
     summary: "Deep dive into advanced React concepts and best practices.",
     views: "8k",
     completed: false,
@@ -45,9 +42,9 @@ const videos = [
     },
   },
   {
-    id: "jNQXAC9IVRw",
+    id: "kRR1K3q5nlg",
     title: "3. Backend Development with Node.js",
-    duration: "12:18",
+    duration: "43:30",
     summary: "Exploring server-side development using Node.js and Express.",
     views: "10k",
     completed: false,
@@ -66,9 +63,9 @@ const videos = [
     },
   },
   {
-    id: "EngW7tLk6R8",
+    id: "U6fpVzIGVCI",
     title: "4. Full Stack Integration",
-    duration: "20:30",
+    duration: "9:14:10",
     summary: "Connecting frontend and backend to create a full stack application.",
     views: "15k",
     completed: false,
@@ -87,9 +84,9 @@ const videos = [
     },
   },
   {
-    id: "kJQP7kiw5Fk",
+    id: "y6H7OVnBhu8",
     title: "5. Deployment and Best Practices",
-    duration: "18:22",
+    duration: "8:27",
     summary: "Learn about deploying web applications and industry best practices.",
     views: "11k",
     completed: false,

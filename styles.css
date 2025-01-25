@@ -211,6 +211,7 @@ button:hover {
     margin-bottom: 15px;
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 15px;
+    transition: background-color 0.3s ease;
   }
   
   .video-item:last-child {
@@ -620,3 +621,11 @@ button:hover {
 
 
 
+.video-item.active {
+  background-color: #9fd9a0;
+  border-color: #000;
+}
+
+.video-item.active .video-title {
+  font-weight: bold;
+}
